@@ -1,0 +1,5 @@
+package com.smartdairy.entity;
+public class ReportSummary {
+ private double milkToday,milkMonth,salesToday,salesMonth,paymentsReceived,pendingInvoices,expensesToday,expensesMonth;
+ public double getMilkToday(){return milkToday;} public void setMilkToday(double v){milkToday=v;} public double getMilkMonth(){return milkMonth;} public void setMilkMonth(double v){milkMonth=v;} public double getSalesToday(){return salesToday;} public void setSalesToday(double v){salesToday=v;} public double getSalesMonth(){return salesMonth;} public void setSalesMonth(double v){salesMonth=v;} public double getPaymentsReceived(){return paymentsReceived;} public void setPaymentsReceived(double v){paymentsReceived=v;} public double getPendingInvoices(){return pendingInvoices;} public void setPendingInvoices(double v){pendingInvoices=v;} public double getExpensesToday(){return expensesToday;} public void setExpensesToday(double v){expensesToday=v;} public double getExpensesMonth(){return expensesMonth;} public void setExpensesMonth(double v){expensesMonth=v;}
+}

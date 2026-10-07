@@ -1,0 +1,10 @@
+package com.smartdairy.repository;
+import com.smartdairy.entity.Expense; import com.smartdairy.util.DBConnection; import java.sql.*; import java.util.*;
+public class ExpenseRepository {
+ public void save(Expense e)throws Exception{String q="INSERT INTO expenses(expense_date,category,amount,description,payment_method) VALUES(?,?,?,?,?)";try(Connection c=DBConnection.getConnection();PreparedStatement p=c.prepareStatement(q)){set(p,e);p.executeUpdate();}}
+ public void update(Expense e)throws Exception{String q="UPDATE expenses SET expense_date=?,category=?,amount=?,description=?,payment_method=? WHERE id=?";try(Connection c=DBConnection.getConnection();PreparedStatement p=c.prepareStatement(q)){set(p,e);p.setInt(6,e.getId());p.executeUpdate();}}
+ private void set(PreparedStatement p,Expense e)throws Exception{p.setDate(1,e.getExpenseDate());p.setString(2,e.getCategory());p.setDouble(3,e.getAmount());p.setString(4,e.getDescription());p.setString(5,e.getPaymentMethod());}
+ public void delete(int id)throws Exception{try(Connection c=DBConnection.getConnection();PreparedStatement p=c.prepareStatement("DELETE FROM expenses WHERE id=?")){p.setInt(1,id);p.executeUpdate();}}
+ public List<Expense> findAll()throws Exception{return findByRange(null,null);}
+ public List<Expense> findByRange(java.sql.Date from,java.sql.Date to)throws Exception{List<Expense>a=new ArrayList<>();String q="SELECT * FROM expenses WHERE (? IS NULL OR expense_date>=?) AND (? IS NULL OR expense_date<=?) ORDER BY expense_date DESC,id DESC";try(Connection c=DBConnection.getConnection();PreparedStatement p=c.prepareStatement(q)){p.setDate(1,from);p.setDate(2,from);p.setDate(3,to);p.setDate(4,to);try(ResultSet r=p.executeQuery()){while(r.next()){Expense e=new Expense();e.setId(r.getInt("id"));e.setExpenseDate(r.getDate("expense_date"));e.setCategory(r.getString("category"));e.setAmount(r.getDouble("amount"));e.setDescription(r.getString("description"));e.setPaymentMethod(r.getString("payment_method"));a.add(e);}}}return a;}
+}

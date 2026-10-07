@@ -1,0 +1,9 @@
+package com.smartdairy.repository;
+import com.smartdairy.entity.Distributor; import com.smartdairy.util.DBConnection; import java.sql.*; import java.util.*;
+public class DistributorRepository {
+ public void save(Distributor d)throws Exception{String q="INSERT INTO distributors(name,mobile,shop_name,address,area,status) VALUES(?,?,?,?,?,?)";try(Connection c=DBConnection.getConnection();PreparedStatement p=c.prepareStatement(q)){p.setString(1,d.getName());p.setString(2,d.getMobile());p.setString(3,d.getShopName());p.setString(4,d.getAddress());p.setString(5,d.getArea());p.setString(6,d.getStatus());p.executeUpdate();}}
+ public void update(Distributor d)throws Exception{String q="UPDATE distributors SET name=?,mobile=?,shop_name=?,address=?,area=?,status=? WHERE id=?";try(Connection c=DBConnection.getConnection();PreparedStatement p=c.prepareStatement(q)){p.setString(1,d.getName());p.setString(2,d.getMobile());p.setString(3,d.getShopName());p.setString(4,d.getAddress());p.setString(5,d.getArea());p.setString(6,d.getStatus());p.setInt(7,d.getId());p.executeUpdate();}}
+ public void delete(int id)throws Exception{try(Connection c=DBConnection.getConnection();PreparedStatement p=c.prepareStatement("DELETE FROM distributors WHERE id=?")){p.setInt(1,id);p.executeUpdate();}}
+ public List<Distributor> findAll()throws Exception{List<Distributor> a=new ArrayList<>();try(Connection c=DBConnection.getConnection();PreparedStatement p=c.prepareStatement("SELECT * FROM distributors ORDER BY id DESC");ResultSet r=p.executeQuery()){while(r.next())a.add(map(r));}return a;}
+ private Distributor map(ResultSet r)throws Exception{return new Distributor(r.getInt("id"),r.getString("name"),r.getString("mobile"),r.getString("shop_name"),r.getString("address"),r.getString("area"),r.getString("status"));}
+}
