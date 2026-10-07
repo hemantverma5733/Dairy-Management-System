@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+    https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+    version="6.0">
+
+    <!-- LOGIN -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- MILK COLLECTION -->
+    <servlet>
+        <servlet-name>MilkCollectionServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.MilkCollectionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MilkCollectionServlet</servlet-name>
+        <url-pattern>/MilkCollectionServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- SUPPLIER -->
+    <servlet>
+        <servlet-name>SupplierServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.SupplierServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SupplierServlet</servlet-name>
+        <url-pattern>/SupplierServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SupplierDeleteServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.SupplierDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SupplierDeleteServlet</servlet-name>
+        <url-pattern>/SupplierDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SupplierUpdateServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.SupplierUpdateServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SupplierUpdateServlet</servlet-name>
+        <url-pattern>/SupplierUpdateServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- CUSTOMER -->
+    <servlet>
+        <servlet-name>CustomerServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.CustomerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CustomerServlet</servlet-name>
+        <url-pattern>/CustomerServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CustomerDeleteServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.CustomerDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CustomerDeleteServlet</servlet-name>
+        <url-pattern>/CustomerDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CustomerUpdateServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.CustomerUpdateServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CustomerUpdateServlet</servlet-name>
+        <url-pattern>/CustomerUpdateServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- PRODUCT -->
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.ProductServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/ProductServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProductDeleteServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.ProductDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ProductDeleteServlet</servlet-name>
+        <url-pattern>/ProductDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProductUpdateServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.ProductUpdateServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ProductUpdateServlet</servlet-name>
+        <url-pattern>/ProductUpdateServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- INVENTORY -->
+    <servlet>
+        <servlet-name>InventoryServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.InventoryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>InventoryServlet</servlet-name>
+        <url-pattern>/InventoryServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- ORDER -->
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.OrderServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/OrderServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- PAYMENT -->
+    <servlet>
+        <servlet-name>PaymentServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.PaymentServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PaymentServlet</servlet-name>
+        <url-pattern>/PaymentServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- DISTRIBUTOR -->
+    <servlet>
+        <servlet-name>DistributorServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.DistributorServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DistributorServlet</servlet-name>
+        <url-pattern>/DistributorServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DistributorDeleteServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.DistributorDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DistributorDeleteServlet</servlet-name>
+        <url-pattern>/DistributorDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DistributorUpdateServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.DistributorUpdateServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DistributorUpdateServlet</servlet-name>
+        <url-pattern>/DistributorUpdateServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- DELIVERY -->
+    <servlet>
+        <servlet-name>DeliveryServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.DeliveryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeliveryServlet</servlet-name>
+        <url-pattern>/DeliveryServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeliveryDeleteServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.DeliveryDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeliveryDeleteServlet</servlet-name>
+        <url-pattern>/DeliveryDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeliveryUpdateServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.DeliveryUpdateServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeliveryUpdateServlet</servlet-name>
+        <url-pattern>/DeliveryUpdateServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- SUBSCRIPTION -->
+    <servlet>
+        <servlet-name>SubscriptionServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.SubscriptionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubscriptionServlet</servlet-name>
+        <url-pattern>/SubscriptionServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SubscriptionDeleteServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.SubscriptionDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubscriptionDeleteServlet</servlet-name>
+        <url-pattern>/SubscriptionDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SubscriptionUpdateServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.SubscriptionUpdateServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubscriptionUpdateServlet</servlet-name>
+        <url-pattern>/SubscriptionUpdateServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- INVOICE -->
+    <servlet>
+        <servlet-name>InvoiceServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.InvoiceServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>InvoiceServlet</servlet-name>
+        <url-pattern>/InvoiceServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InvoiceDeleteServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.InvoiceDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>InvoiceDeleteServlet</servlet-name>
+        <url-pattern>/InvoiceDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- EXPENSE -->
+    <servlet>
+        <servlet-name>ExpenseServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.ExpenseServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ExpenseServlet</servlet-name>
+        <url-pattern>/ExpenseServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ExpenseDeleteServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.ExpenseDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ExpenseDeleteServlet</servlet-name>
+        <url-pattern>/ExpenseDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ExpenseUpdateServlet</servlet-name>
+        <servlet-class>com.smartdairy.controller.ExpenseUpdateServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ExpenseUpdateServlet</servlet-name>
+        <url-pattern>/ExpenseUpdateServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- WELCOME PAGE -->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
