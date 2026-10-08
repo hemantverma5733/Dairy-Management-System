@@ -1,0 +1,11 @@
+package com.smartdairy.repository;
+import com.smartdairy.entity.MilkCollection; import com.smartdairy.util.DBConnection; import java.sql.*; import java.time.LocalDate; import java.util.*;
+public class MilkCollectionRepository {
+ public int save(MilkCollection m)throws Exception{String q="INSERT INTO milk_collection(collection_date,supplier_name,shift,animal_type,quantity,fat,snf,rate,amount) VALUES(?,?,?,?,?,?,?,?,?)";try(Connection c=DBConnection.getConnection();PreparedStatement p=c.prepareStatement(q,Statement.RETURN_GENERATED_KEYS)){p.setDate(1,Date.valueOf(m.getCollectionDate()));p.setString(2,m.getSupplierName());p.setString(3,m.getShift());p.setString(4,m.getAnimalType());p.setDouble(5,m.getQuantity());p.setDouble(6,m.getFat());p.setDouble(7,m.getSnf());p.setDouble(8,m.getRate());p.setDouble(9,m.getAmount());p.executeUpdate();try(ResultSet r=p.getGeneratedKeys()){if(r.next())m.setId(r.getInt(1));}}return m.getId();}
+ public List<MilkCollection> findRecent(int limit)throws Exception{List<MilkCollection> out=new ArrayList<>();String q="SELECT * FROM milk_collection ORDER BY id DESC LIMIT ?";try(Connection c=DBConnection.getConnection();PreparedStatement p=c.prepareStatement(q)){p.setInt(1,limit);try(ResultSet r=p.executeQuery()){while(r.next())out.add(map(r));}}return out;}
+ public double totalQuantity()throws Exception{return scalar("SELECT COALESCE(SUM(quantity),0) FROM milk_collection");}
+ public double totalAmount()throws Exception{return scalar("SELECT COALESCE(SUM(amount),0) FROM milk_collection");}
+ public long totalEntries()throws Exception{return (long)scalar("SELECT COUNT(*) FROM milk_collection");}
+ private double scalar(String q)throws Exception{try(Connection c=DBConnection.getConnection();PreparedStatement p=c.prepareStatement(q);ResultSet r=p.executeQuery()){r.next();return r.getDouble(1);}}
+ private MilkCollection map(ResultSet r)throws SQLException{MilkCollection m=new MilkCollection();m.setId(r.getInt("id"));Date d=r.getDate("collection_date");m.setCollectionDate(d==null?null:d.toLocalDate());m.setSupplierName(r.getString("supplier_name"));m.setShift(r.getString("shift"));m.setAnimalType(r.getString("animal_type"));m.setQuantity(r.getDouble("quantity"));m.setFat(r.getDouble("fat"));m.setSnf(r.getDouble("snf"));m.setRate(r.getDouble("rate"));m.setAmount(r.getDouble("amount"));return m;}
+}

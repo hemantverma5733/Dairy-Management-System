@@ -1,0 +1,3 @@
+package com.smartdairy.controller;
+import com.smartdairy.service.MilkCollectionService; import jakarta.servlet.*; import jakarta.servlet.http.*; import java.io.IOException;
+public class MilkRecordsServlet extends HttpServlet {private final MilkCollectionService service=new MilkCollectionService(); protected void doGet(HttpServletRequest req,HttpServletResponse resp)throws ServletException,IOException{try{req.setAttribute("records",service.recent(100));req.setAttribute("totalQuantity",service.totalQuantity());req.setAttribute("totalAmount",service.totalAmount());req.setAttribute("totalEntries",service.totalEntries());req.getRequestDispatcher("milk_records.jsp").forward(req,resp);}catch(Exception e){throw new ServletException(e);}}}
